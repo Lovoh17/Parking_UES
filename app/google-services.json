@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "776801477471",
+    "project_id": "parkingues",
+    "storage_bucket": "parkingues.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776801477471:android:7d696b3cbc664cfaf54cea",
+        "android_client_info": {
+          "package_name": "com.example.parking_ues"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRuY04Uq668MNLoTamqF6LpdMO7KA3FZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
