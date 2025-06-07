@@ -8,4 +8,6 @@
     <string name="app_logo">Logo de ParkEase</string>
     <string name="active_parking_title">Tu estacionamiento activo:</string>
     <string name="recent_history">Historial reciente</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
