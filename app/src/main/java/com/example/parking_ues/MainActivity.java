@@ -29,4 +29,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void iniciarSeccion(View view) {
+        Intent intent = new Intent(this, MenuAdminActivity.class);
+        startActivity(intent);
+    }
 }
