@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/rojo_ues"
+                android:backgroundTint="@color/rojo_granate"
                 app:cardCornerRadius="12dp">
 
                 <TextView
@@ -48,7 +48,7 @@
                     android:gravity="center"
                     android:letterSpacing="0.05"
                     android:text="GESTION DE ESTACIONAMIENTOS"
-                    android:textColor="@color/beige_claro"
+                    android:textColor="@color/blanco"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

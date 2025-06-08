@@ -46,4 +46,10 @@
     <color name="naranja_durazno">#F3A26D</color>
     <color name="terracota_suave">#BE5B50</color>
     <color name="rojo_ues">#800000</color>
+
+
+    <!-- Colores con transparencia -->
+    <color name="blanco_50">#80FFFFFF</color>
+    <color name="blanco_20">#33FFFFFF</color>
+    <color name="blanco_80">#CCFFFFFF</color>
 </resources>
