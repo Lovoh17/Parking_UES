@@ -8,7 +8,7 @@
     android:background="@color/light_gray"
     android:padding="16dp"
     android:id="@+id/MainActivity2"
-    tools:context=".MainActivity2">
+    tools:context=".Activities.MainActivity2">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"

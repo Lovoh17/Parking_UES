@@ -6,7 +6,7 @@
     android:background="@color/blanco"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuAdminActivity">
+    tools:context=".Activities.MenuAdminActivity">
 
     <!--TOOLBAR -->
     <androidx.appcompat.widget.Toolbar
@@ -55,7 +55,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
-        android:name="com.example.parking_ues.DashboardFragment"
+        android:name="com.example.parking_ues.Fragments.DashboardFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="0dp"

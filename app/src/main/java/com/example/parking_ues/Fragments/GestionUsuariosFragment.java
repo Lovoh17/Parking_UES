@@ -1,10 +1,8 @@
-package com.example.parking_ues;
+package com.example.parking_ues.Fragments;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.parking_ues.Adapters.GestionarUsuariosAdapter;
 import com.example.parking_ues.Dialogs.UsuariosDialog;
+import com.example.parking_ues.R;
 import com.google.android.material.button.MaterialButton;
 
 

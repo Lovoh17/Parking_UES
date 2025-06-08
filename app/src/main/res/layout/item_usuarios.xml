@@ -54,7 +54,7 @@
 
         <!-- Correo -->
         <TextView
-            android:id="@+id/lblCorreo"
+            android:id="@+id/lblOlvidePassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
@@ -75,8 +75,8 @@
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/lblCorreo"
-            app:layout_constraintTop_toBottomOf="@id/lblCorreo" />
+            app:layout_constraintStart_toStartOf="@id/lblOlvidePassword"
+            app:layout_constraintTop_toBottomOf="@id/lblOlvidePassword" />
 
         <!-- FECHA de creación -->
         <TextView

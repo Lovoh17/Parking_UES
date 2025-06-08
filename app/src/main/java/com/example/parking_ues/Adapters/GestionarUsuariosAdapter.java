@@ -89,7 +89,7 @@ public class GestionarUsuariosAdapter extends RecyclerView.Adapter<GestionarUsua
             super(itemView);
             lblNombreCompleto = itemView.findViewById(R.id.lblNombreCompleto);
             lblRol = itemView.findViewById(R.id.lblRol);
-            lblCorreo = itemView.findViewById(R.id.lblCorreo);
+            lblCorreo = itemView.findViewById(R.id.lblOlvidePassword);
             lblFechaCreacion = itemView.findViewById(R.id.lblFechaDeCreacionUusuario);
             lblUltimoAcceso = itemView.findViewById(R.id.lblUltimoAcceso);
             imgUsuario = itemView.findViewById(R.id.imgUsuario);

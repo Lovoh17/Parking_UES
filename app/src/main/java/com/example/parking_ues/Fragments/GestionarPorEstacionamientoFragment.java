@@ -1,6 +1,5 @@
-package com.example.parking_ues;
+package com.example.parking_ues.Fragments;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,9 +12,9 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.parking_ues.Adapters.GestionarUsuariosAdapter;
 import com.example.parking_ues.Adapters.HistorialPorEstacionamientoAdapter;
 import com.example.parking_ues.Dialogs.NombreDialogo;
+import com.example.parking_ues.R;
 
 
 public class GestionarPorEstacionamientoFragment extends Fragment {

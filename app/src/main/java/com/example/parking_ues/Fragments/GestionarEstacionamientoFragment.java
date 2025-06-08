@@ -1,4 +1,4 @@
-package com.example.parking_ues;
+package com.example.parking_ues.Fragments;
 
 import android.os.Bundle;
 
@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.parking_ues.R;
 import com.google.android.material.button.MaterialButton;
 
 

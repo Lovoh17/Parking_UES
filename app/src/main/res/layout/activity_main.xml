@@ -7,7 +7,7 @@
     android:padding="20dp"
     android:id="@+id/main"
     android:background="@drawable/degradado_rojo"
-    tools:context=".MainActivity">
+    tools:context=".Activities.MainActivity">
 
     <!-- Logo -->
 
@@ -94,7 +94,7 @@
         app:passwordToggleTint="@android:color/white"
         app:startIconDrawable="@drawable/ic_candado"
         app:startIconTint="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/lblCorreo"
+        app:layout_constraintBottom_toTopOf="@+id/lblOlvidePassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilCorreo">
@@ -113,7 +113,7 @@
 
     <!-- Olvidé mi contraseña -->
     <TextView
-        android:id="@+id/lblCorreo"
+        android:id="@+id/lblOlvidePassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
@@ -144,7 +144,7 @@
         app:cornerRadius="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblCorreo" />
+        app:layout_constraintTop_toBottomOf="@+id/lblOlvidePassword" />
 
     <!-- btn iniciar con googlee -->
     <com.google.android.material.button.MaterialButton

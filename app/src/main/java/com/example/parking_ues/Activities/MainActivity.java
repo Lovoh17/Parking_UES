@@ -1,4 +1,4 @@
-package com.example.parking_ues;
+package com.example.parking_ues.Activities;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -16,7 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.parking_ues.Models.User;
+import com.example.parking_ues.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -282,10 +282,5 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
-    }
-
-    public void iniciarSeccion(View view) {
-        Intent intent = new Intent(this, MenuAdminActivity.class);
-        startActivity(intent);
     }
 }

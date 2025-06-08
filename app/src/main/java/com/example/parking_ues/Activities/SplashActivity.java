@@ -1,4 +1,4 @@
-package com.example.parking_ues;
+package com.example.parking_ues.Activities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -20,6 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.parking_ues.R;
 
 public class SplashActivity extends AppCompatActivity {
 
