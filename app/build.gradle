@@ -62,4 +62,18 @@ dependencies {
     // UI
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.material:material:1.11.0'
+
+    //DEPENDECIA PARA: PROCESAR ANOTACIONES Y PERMITIR CONFIGRAIONES PERSOL=NALIZADAS
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+
+    //DEPENDIACIA PARA CREAR Y MANIPULAR ARCHIVO PDF
+    implementation 'com.itextpdf:itext7-core:7.2.5'
+
+    //DEPENDIACIA PARA MOSTAR GRAFICAS Y ESTADISTICA VISULES EN ANDROID
+    implementation 'com.github.PhilJay:MPAndroidChart:3.1.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+
+    //DEPENDECIA PARA CARGA IMAGNES
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
 }

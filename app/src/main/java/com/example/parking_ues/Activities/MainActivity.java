@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView ForgotPassword;
     private TextView ResgisterUsers;
     private Button btnIniciarSesion;
+    private TextView lblRgisterUsers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         btnGoogleSignIn = findViewById(R.id.btnGoogleSignIn);
         ForgotPassword = findViewById(R.id.lblOlvidePassword);
         ResgisterUsers = findViewById(R.id.lblRgisterUsers);
+
 
         ForgotPassword.setOnClickListener(v -> {
             String email = etEmail.getText().toString().trim();
@@ -95,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
                 signInWithGoogle();
             }
         });
+
+
     }
 //********************* Inicio de seccion por correo y contraseña *********************************/
     private boolean validarCampos(String email, String password) {

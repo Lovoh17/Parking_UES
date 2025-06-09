@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
+    android:padding="12dp"
+    app:cardBackgroundColor="@color/blanco"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Icono de transacción -->
+        <ImageView
+            android:id="@+id/imgTipoTransaccion"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_bolsa_dinero"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/rojo_ues" />
+
+        <!-- Descripción de la transacción -->
+        <TextView
+            android:id="@+id/lblDescripcionTransaccion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:text="Pago de estacionamiento"
+            android:textColor="@color/rojo_brillante"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/lblMontoTransaccion"
+            app:layout_constraintStart_toEndOf="@id/imgTipoTransaccion"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- MONTO DE LA TRACCION-->
+        <TextView
+            android:id="@+id/lblMontoTransaccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$25.00"
+            android:textColor="@color/rojo_brillante"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- NUN DE REFRENCIA -->
+        <TextView
+            android:id="@+id/lblNumeroReferencia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Ref: TRX-1234567890"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/chipEstadoTransaccion"
+            app:layout_constraintStart_toStartOf="@id/lblDescripcionTransaccion"
+            app:layout_constraintTop_toBottomOf="@id/lblDescripcionTransaccion" />
+
+
+
+        <!-- fecha de creacion -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipEstadoTransaccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Completado"
+            android:textColor="@color/azul_noche"
+            android:textSize="12sp"
+            app:chipBackgroundColor="@color/verde"
+            app:chipCornerRadius="8dp"
+            app:chipEndPadding="8dp"
+            app:chipMinHeight="28dp"
+            app:chipStartPadding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblMontoTransaccion" />
+
+        <TextView
+            android:id="@+id/lblFechaTransaccion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Fecha: 2024-11-15 10:30:00"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/lblNumeroReferencia"
+            app:layout_constraintTop_toBottomOf="@id/lblNumeroReferencia" />
+
+        <!-- METDO D PAGO -->
+        <TextView
+            android:id="@+id/lblMetodoPago"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Método: Tarjeta de crédito"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/lblFechaTransaccion"
+            app:layout_constraintTop_toBottomOf="@id/lblFechaTransaccion" />
+
+        <!-- TIPO DE TRACCION -->
+        <TextView
+            android:id="@+id/lblTipoTransaccion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Tipo: parking_payment"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/lblMetodoPago"
+            app:layout_constraintTop_toBottomOf="@id/lblMetodoPago" />
+
+        <!-- FECHA DE CONMEPTADO -->
+        <TextView
+            android:id="@+id/lblFechaCompletado"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Completado: 2024-11-15 10:32:00"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/lblTipoTransaccion"
+            app:layout_constraintTop_toBottomOf="@id/lblTipoTransaccion" />
+
+        <!-- CANCELARION (ESTA ES OPPCIONALL) -->
+        <TextView
+            android:id="@+id/lblRazonCancelacion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Motivo: Tarjeta declinada"
+            android:textColor="@color/rojo_ues"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/lblTipoTransaccion"
+            app:layout_constraintTop_toBottomOf="@id/lblTipoTransaccion" />
+
+        <!-- Monto de reembolso pcional -->
+        <TextView
+            android:id="@+id/lblMontoReembolso"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Reembolso: $25.00"
+            android:textColor="@color/verde"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/lblTipoTransaccion"
+            app:layout_constraintTop_toBottomOf="@id/lblTipoTransaccion" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

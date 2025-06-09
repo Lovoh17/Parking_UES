@@ -18,6 +18,7 @@ import com.example.parking_ues.Fragments.DashboardFragment;
 import com.example.parking_ues.Fragments.GestionUsuariosFragment;
 import com.example.parking_ues.Fragments.GestionarEstacionamientoFragment;
 import com.example.parking_ues.R;
+import com.example.parking_ues.Fragments.ReportesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MenuAdminActivity extends AppCompatActivity {
@@ -79,6 +80,12 @@ public class MenuAdminActivity extends AppCompatActivity {
             else if (id == R.id.navGestionarUsuarios) {
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainerView, new GestionUsuariosFragment())
+                        .commit();
+                return true;
+            }
+            else if (id == R.id.navReportesEstafisticas) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragmentContainerView, new ReportesFragment())
                         .commit();
                 return true;
             }

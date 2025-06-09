@@ -9,10 +9,8 @@
     android:background="@drawable/degradado_rojo"
     tools:context=".Activities.MainActivity">
 
-    <!-- Logo -->
 
     <!-- Titulo -->
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="122dp"
@@ -74,7 +72,7 @@
             android:textColorHint="#80FFFFFF" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Campo para contraseña -->
+    <!-- Campo para contrasena -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPassword"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -99,7 +97,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilCorreo">
 
-        <!-- Input para Contraseña -->
+        <!-- Input para Contrasena -->
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtPassword"
             android:layout_width="match_parent"
@@ -111,7 +109,7 @@
             android:textColorHint="#80FFFFFF" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Olvidé mi contraseña -->
+    <!-- Olvide mi contrasena -->
     <TextView
         android:id="@+id/lblOlvidePassword"
         android:layout_width="wrap_content"
