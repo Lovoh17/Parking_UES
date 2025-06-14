@@ -47,7 +47,7 @@ public class UsuariosDialog extends DialogFragment {
     }
 
     public void AsociarElementosXML(View view){
-        txtNombreUsuario = view.findViewById(R.id.txtNombreUsuario);
+        txtNombreUsuario = view.findViewById(R.id.lblNombreAdminPefil);
         txtEmailUsuario = view.findViewById(R.id.txtEmailUsuario);
         txtTelefonoUsuario = view.findViewById(R.id.txtTelefonoUsuario);
         txtTelefonoUsuario = view.findViewById(R.id.txtTelefonoUsuario);

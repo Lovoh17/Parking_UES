@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/navCargaEntradaSalida"
-        android:icon="@drawable/ic_entada_salida"
-        android:title="Entradas y salida"
+        android:id="@+id/navPerfilAdmin"
+        android:icon="@drawable/ic_perfil_blanco"
+        android:title="Perfil"
         app:showAsAction="always"/>
     <item
         android:id="@+id/navCerrarSesion"

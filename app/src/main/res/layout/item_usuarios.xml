@@ -65,7 +65,7 @@
             app:layout_constraintStart_toStartOf="@id/lblRol"
             app:layout_constraintTop_toBottomOf="@id/lblRol" />
 
-        <!-- Teléfono -->
+        <!-- TELEFONE -->
         <TextView
             android:id="@+id/lblTelefono"
             android:layout_width="0dp"
@@ -78,7 +78,7 @@
             app:layout_constraintStart_toStartOf="@id/lblOlvidePassword"
             app:layout_constraintTop_toBottomOf="@id/lblOlvidePassword" />
 
-        <!-- FECHA de creación -->
+        <!-- FECHA DE CRACION -->
         <TextView
             android:id="@+id/lblFechaDeCreacionUusuario"
             android:layout_width="0dp"
@@ -91,7 +91,7 @@
             app:layout_constraintStart_toStartOf="@id/lblTelefono"
             app:layout_constraintTop_toBottomOf="@id/lblTelefono" />
 
-        <!-- Último acceso -->
+        <!-- UTTIMO ACCCESO -->
         <TextView
             android:id="@+id/lblUltimoAcceso"
             android:layout_width="0dp"
@@ -104,7 +104,6 @@
             app:layout_constraintStart_toStartOf="@id/lblFechaDeCreacionUusuario"
             app:layout_constraintTop_toBottomOf="@id/lblFechaDeCreacionUusuario" />
 
-        <!-- Estado Usuario -->
 
         <!-- btn Editar -->
         <ImageButton
@@ -115,7 +114,7 @@
             android:layout_marginEnd="8dp"
             android:background="@drawable/stylo_redondo"
             android:contentDescription="Editar usuario"
-            android:src="@drawable/ic_editar"
+            android:src="@drawable/ic_editar_pequenio"
             app:layout_constraintEnd_toStartOf="@id/btnEliminarUsuario"
             app:layout_constraintTop_toBottomOf="@+id/lblUltimoAcceso"
             app:tint="@color/white" />

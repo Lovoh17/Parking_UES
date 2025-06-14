@@ -37,7 +37,7 @@ public class NombreDialogo extends DialogFragment {
     }
     public void AsociarElementosXML(View view){
         lblTituloDialogoUsuario = view.findViewById(R.id.lblTituloDialogoUsuario);
-        txtNombreUsuario = view.findViewById(R.id.txtNombreUsuario);
+        txtNombreUsuario = view.findViewById(R.id.lblNombreAdminPefil);
         btnEditarEstacionamientoNombre = view.findViewById(R.id.btnEditarEstacionamientoNombre);
         btnSalir = view.findViewById(R.id.btnSalir);
     }

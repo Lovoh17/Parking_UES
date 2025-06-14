@@ -32,7 +32,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/logo" />
+                app:srcCompat="@drawable/logo_rojo_ues" />
 
             <!-- TITULO -->
             <TextView
@@ -83,12 +83,12 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lblSignUpSubtitle"
-                app:startIconDrawable="@drawable/ic_usuario"
+                app:startIconDrawable="@drawable/ic_usuario_pequenios"
                 app:startIconTint="@android:color/white">
 
                 <!-- INPUT PARA NOMBRE -->
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtNombreUsuario"
+                    android:id="@+id/lblNombreAdminPefil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Nombre de usuario"
@@ -98,7 +98,7 @@
                     android:textColorHint="#80FFFFFF" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- CAMPO PARA CORREO ELECTRÓNICO -->
+            <!-- CAMPO PARA CORREO  -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilEmail"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -133,7 +133,7 @@
                     android:textColorHint="#80FFFFFF" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- CAMPO PARA TELÉFONO -->
+            <!-- CAMPO PARA TELEFONO -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilTelefonoUsuario"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -156,7 +156,7 @@
                 app:startIconDrawable="@drawable/ic_telefono"
                 app:startIconTint="@android:color/white">
 
-                <!-- INPUT TELÉFONO -->
+                <!-- INPUT TELEFONO -->
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtTelefono"
                     android:layout_width="match_parent"
@@ -168,7 +168,7 @@
                     android:textColorHint="#80FFFFFF" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- CAMPO PARA CONTRASEÑA -->
+            <!-- CAMPO PARA CONTRASENA -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilContrasena"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -193,9 +193,9 @@
                 app:startIconDrawable="@drawable/ic_candado"
                 app:startIconTint="@android:color/white">
 
-                <!-- INPUT CONTRASEÑA -->
+                <!-- INPUT CONTRASENA -->
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtContrasena"
+                    android:id="@+id/txtNuevaContrasena"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Contraseña"
@@ -205,7 +205,7 @@
                     android:textColorHint="#80FFFFFF" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- CAMPO PARA CONFIRMAR CONTRASEÑA -->
+            <!-- CAMPO PARA CONFIRMAR CONTRASENIA -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilConfirmarContrasena"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -232,7 +232,7 @@
 
                 <!-- INPUT CONFIRMAR CONTRASEÑA -->
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtConfirmarContrasena"
+                    android:id="@+id/txtConfirmarNuevaContrasena"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Confirmar contraseña"
@@ -242,33 +242,43 @@
                     android:textColorHint="#80FFFFFF" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- SPINNER PARA ROL -->
-            <Spinner
-                android:id="@+id/spRol"
+            <!-- SP ROL-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilRolUsuario"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
                 android:background="@drawable/spinner_background"
-                android:dropDownSelector="@drawable/spinner_dropdown_selector"
-                android:elevation="2dp"
-                android:padding="16dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="48dp"
-                android:textColor="@color/rojo_ues"
-                android:textSize="16sp"
+                app:boxBackgroundColor="#33FFFFFF"
+                app:boxCornerRadiusBottomEnd="24dp"
+                app:boxCornerRadiusBottomStart="24dp"
+                app:boxCornerRadiusTopEnd="24dp"
+                app:boxCornerRadiusTopStart="24dp"
+                app:boxStrokeColor="@android:color/white"
+                app:hintEnabled="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tilConfirmarContrasena" />
+                app:layout_constraintTop_toBottomOf="@+id/tilConfirmarContrasena"
+                app:startIconTint="@android:color/white">
 
-            <!-- BTN REGISTRARSE -->
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spRol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/spinner_background"
+                    android:paddingVertical="16dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- BTN INICIAR SECION CON GOOGLE -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnRegistrarse"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="11dp"
                 android:layout_marginEnd="32dp"
                 android:backgroundTint="@color/white"
                 android:padding="15dp"
@@ -279,12 +289,12 @@
                 android:textStyle="bold"
                 app:cornerRadius="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spRol" />
+                app:layout_constraintTop_toBottomOf="@+id/tilRolUsuario" />
 
-            <!-- BTN INICIAR SECION CON GOOGLE -->
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnIniciarSesionGoogle"
+                android:id="@+id/btnEditarPerfil"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -318,7 +328,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/lblIniciarSesion"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesionGoogle" />
+                app:layout_constraintTop_toBottomOf="@+id/btnEditarPerfil" />
 
             <!-- ENLACE INICIAR SECION -->
             <TextView
@@ -332,7 +342,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/lblYaTengoCuenta"
-                app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesionGoogle" />
+                app:layout_constraintTop_toBottomOf="@+id/btnEditarPerfil" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

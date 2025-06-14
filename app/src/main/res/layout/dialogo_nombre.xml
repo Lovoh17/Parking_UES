@@ -51,12 +51,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/lblTituloDialogoUsuario"
-            app:startIconDrawable="@drawable/ic_usuario"
+            app:startIconDrawable="@drawable/ic_usuario_pequenios"
             app:startIconTint="@android:color/white">
 
             <!-- INPUT PARA NOMBRE -->
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtNombreUsuario"
+                android:id="@+id/lblNombreAdminPefil"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Nombre completo"
@@ -66,18 +66,7 @@
                 android:textColorHint="#80FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- CAMPO PARA CORREO -->
-
-        <!-- CAMPO PARA NUMERO DE TELEFONO -->
-
-        <!-- CAMPO PARA CONTRASENA -->
-
-        <!-- CAMPO PARA CONFIRMAR CONTRASENA -->
-
-        <!-- BOTON INSERTAR USUARIO -->
-
-        <!-- BOTON CANCELAR -->
-
+        <!-- BOTON EDITAR NOMBRE  -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnEditarEstacionamientoNombre"
             android:layout_width="0dp"

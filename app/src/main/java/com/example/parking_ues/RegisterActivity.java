@@ -34,8 +34,8 @@ public class RegisterActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        spRol = findViewById(R.id.spRol);
         lblIniciarSesion = findViewById(R.id.lblIniciarSesion);
-
         lblIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

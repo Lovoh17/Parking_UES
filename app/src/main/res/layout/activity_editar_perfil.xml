@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@drawable/degradado_rojo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditarPerfilActivity">
+
+    <!-- SCROLL PARA MANEJAR LA VIEW -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="32dp">
+
+            <!-- LOGO -->
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="122dp"
+                android:layout_height="106dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_perfil"
+                android:tint="@color/blanco"/>
+
+            <!-- TITULO -->
+            <TextView
+                android:id="@+id/lblSignUpTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="EDITAR PERFIL"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+
+            <!-- CAMPO PARA NOMBRE DE USUARIO -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilNombreUsuario"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="51dp"
+                android:layout_marginEnd="32dp"
+                android:backgroundTint="#80FFFFFF"
+                app:boxBackgroundColor="#33FFFFFF"
+                app:boxCornerRadiusBottomEnd="24dp"
+                app:boxCornerRadiusBottomStart="24dp"
+                app:boxCornerRadiusTopEnd="24dp"
+                app:boxCornerRadiusTopStart="24dp"
+                app:boxStrokeColor="@android:color/white"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblSignUpTitle"
+                app:startIconDrawable="@drawable/ic_usuario_pequenios"
+                app:startIconTint="@android:color/white">
+
+                <!-- TXT PARA NOMBRE -->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lblNombreAdminPefil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre de usuario"
+                    android:inputType="text"
+                    android:paddingVertical="16dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="#80FFFFFF" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- CAMPO PARA CORREO  -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilEmail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:backgroundTint="#80FFFFFF"
+                app:boxBackgroundColor="#33FFFFFF"
+                app:boxCornerRadiusBottomEnd="24dp"
+                app:boxCornerRadiusBottomStart="24dp"
+                app:boxCornerRadiusTopEnd="24dp"
+                app:boxCornerRadiusTopStart="24dp"
+                app:boxStrokeColor="@android:color/white"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilNombreUsuario"
+                app:startIconDrawable="@drawable/ic_correo"
+                app:startIconTint="@android:color/white">
+
+                <!-- TXT CORREO -->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Correo electrónico"
+                    android:inputType="textEmailAddress"
+                    android:paddingVertical="16dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="#80FFFFFF" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- CAMPO PARA TELEFONO -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTelefonoUsuario"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:backgroundTint="#80FFFFFF"
+                app:boxBackgroundColor="#33FFFFFF"
+                app:boxCornerRadiusBottomEnd="24dp"
+                app:boxCornerRadiusBottomStart="24dp"
+                app:boxCornerRadiusTopEnd="24dp"
+                app:boxCornerRadiusTopStart="24dp"
+                app:boxStrokeColor="@android:color/white"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilEmail"
+                app:startIconDrawable="@drawable/ic_telefono"
+                app:startIconTint="@android:color/white">
+
+                <!-- TXT TELEFONO -->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Número de teléfono"
+                    android:inputType="phone"
+                    android:paddingVertical="16dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="#80FFFFFF" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- CAMPO PARA CONTASENIA -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilContrasena"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:backgroundTint="#80FFFFFF"
+                app:boxBackgroundColor="#33FFFFFF"
+                app:boxCornerRadiusBottomEnd="24dp"
+                app:boxCornerRadiusBottomStart="24dp"
+                app:boxCornerRadiusTopEnd="24dp"
+                app:boxCornerRadiusTopStart="24dp"
+                app:boxStrokeColor="@android:color/white"
+                app:hintEnabled="false"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilTelefonoUsuario"
+                app:startIconDrawable="@drawable/ic_candado"
+                app:startIconTint="@android:color/white">
+
+                <!-- INPUT CONTRSASEIA -->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtNuevaContrasena"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Contraseña"
+                    android:inputType="textPassword"
+                    android:paddingVertical="16dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="#80FFFFFF" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- CAMPO PARA CONFIRMAR CONTASENIA -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilConfirmarContrasena"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:backgroundTint="#80FFFFFF"
+                app:boxBackgroundColor="#33FFFFFF"
+                app:boxCornerRadiusBottomEnd="24dp"
+                app:boxCornerRadiusBottomStart="24dp"
+                app:boxCornerRadiusTopEnd="24dp"
+                app:boxCornerRadiusTopStart="24dp"
+                app:boxStrokeColor="@android:color/white"
+                app:hintEnabled="false"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilContrasena"
+                app:startIconDrawable="@drawable/ic_candado"
+                app:startIconTint="@android:color/white">
+
+                <!-- INPUT CONFIRMAR CONTRASEIA -->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtConfirmarNuevaContrasena"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Confirmar contraseña"
+                    android:inputType="textPassword"
+                    android:paddingVertical="16dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="#80FFFFFF" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEditarPerfil"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="32dp"
+                android:backgroundTint="#F8F4F5"
+                android:padding="15dp"
+                android:text="Editar Perfil"
+                android:textAllCaps="false"
+                android:textColor="@color/rojo_ues"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="24dp"
+                app:icon="@drawable/ic_editar"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconTint="@color/rojo_ues"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilConfirmarContrasena" />
+
+            <!--CALCELAR-->
+            <TextView
+                android:id="@+id/btnSalir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Cancelar"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnEditarPerfil" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

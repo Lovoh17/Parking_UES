@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.parking_ues.R;
+import com.example.parking_ues.TarifasComercilaesFragment;
+import com.example.parking_ues.TarifasVIPFragment;
 import com.google.android.material.button.MaterialButton;
 
 
@@ -22,7 +24,7 @@ public class GestionarEstacionamientoFragment extends Fragment implements View.O
     private CardView cardVIP1, cardVIP2, cardVIP3, cardVIP4, cardVIP5, cardVIP6;
 
     // Botones
-    private MaterialButton btnTarifas, btnTarifasVIP;
+    private MaterialButton btnTarifasComnerciales, btnTarifasVIP;
 
     public GestionarEstacionamientoFragment() {
         // Required empty public constructor
@@ -47,7 +49,28 @@ public class GestionarEstacionamientoFragment extends Fragment implements View.O
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_gestionar_estacionamineto, container, false);
+
         AsociarELementosXML(view);
+
+        //EVENTO DEL BOTON TARIFAS COMERCILAES
+        btnTarifasComnerciales.setOnClickListener(v ->{
+            Fragment fragment = new TarifasComercilaesFragment();
+            getParentFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragmentContainerView, fragment)
+                    .addToBackStack(null)
+                    .commit();
+        });
+
+        //EVENTO DEL BOTON TARIFAS VIP
+        btnTarifasVIP.setOnClickListener(v ->{
+            Fragment fragment = new TarifasVIPFragment();
+            getParentFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragmentContainerView, fragment)
+                    .addToBackStack(null)
+                    .commit();
+        });
         return view;
     }
     public void AsociarELementosXML(View view){
@@ -89,8 +112,8 @@ public class GestionarEstacionamientoFragment extends Fragment implements View.O
         cardVIP6 = view.findViewById(R.id.cardVIP6);
         cardVIP6.setOnClickListener(this);
 
-        // Asociar btns (botones)
-        btnTarifas = view.findViewById(R.id.btnTarifas);
+        // Asociar btns botones
+        btnTarifasComnerciales = view.findViewById(R.id.btnTarifasComnerciales);
         btnTarifasVIP = view.findViewById(R.id.btnTarifasVIP);
     }
 
@@ -155,6 +178,8 @@ public class GestionarEstacionamientoFragment extends Fragment implements View.O
                 .addToBackStack(null)
                 .commit();
     }
+
+
 
 
 }

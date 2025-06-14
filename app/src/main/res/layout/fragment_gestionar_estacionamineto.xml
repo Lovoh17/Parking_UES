@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- SCROLL VIEW QUE CONTIENE TODO -->
+    <!-- SCROLL PARA EN CONTENIDO -->
     <ScrollView
         android:id="@+id/scrollViewMain"
         android:layout_width="match_parent"
@@ -383,7 +383,7 @@
                 android:weightSum="2">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnTarifas"
+                    android:id="@+id/btnTarifasComnerciales"
                     android:layout_width="0dp"
                     android:layout_height="52dp"
                     android:layout_marginEnd="8dp"
@@ -425,8 +425,7 @@
             </LinearLayout>
 
         </LinearLayout>
-    </ScrollView>
 
-    <!-- ESPACIADOR PARA NAVEGACION INFERIOR -->
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

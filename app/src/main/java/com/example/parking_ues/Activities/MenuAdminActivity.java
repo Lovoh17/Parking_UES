@@ -2,9 +2,12 @@ package com.example.parking_ues.Activities;
 
 import static android.content.ContentValues.TAG;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +20,7 @@ import androidx.fragment.app.FragmentContainerView;
 import com.example.parking_ues.Fragments.DashboardFragment;
 import com.example.parking_ues.Fragments.GestionUsuariosFragment;
 import com.example.parking_ues.Fragments.GestionarEstacionamientoFragment;
+import com.example.parking_ues.Fragments.PerfilAdminFragment;
 import com.example.parking_ues.R;
 import com.example.parking_ues.Fragments.ReportesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -45,7 +49,10 @@ public class MenuAdminActivity extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()){
+                    case R.id.navPerfilAdmin:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, new PerfilAdminFragment()).commit();
 
+                        break;
                     case R.id.navCerrarSesion: //  caso para cerrar sesion
                        // mostrarDialogoCerrarSesion();
                         break;
@@ -92,8 +99,35 @@ public class MenuAdminActivity extends AppCompatActivity {
 
             return false;
         });
+    }
 
+    //METODO MOSTAR DIALOGO PARA SERRAR SECION
+    private void mostrarDialogoCerrarSesion() {
+        new AlertDialog.Builder(this)
+                .setTitle("Cerrar Sesión")
+                .setMessage("¿Está seguro que desea cerrar sesión?")
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setPositiveButton("Sí, cerrar sesión", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        cerrarSesion(); //METODO CERRAR SECION
+                    }
+                })
+                .setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss())
+                .setCancelable(true)
+                .show();
+    }
 
+    //LOGICA PARA SERRar AECCION
+    private void cerrarSesion() {
+        try {
+            Log.d("TAG", "Iniciando proceso de cierre de sesión");
+            Toast.makeText(this, "Cerrando sesión...", Toast.LENGTH_SHORT).show(); // También aquí
+
+        } catch (Exception e) {
+            Log.e("TAG", "Error cerrando sesión", e);
+            Toast.makeText(this, "Error cerrando sesión: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
     }
 
 

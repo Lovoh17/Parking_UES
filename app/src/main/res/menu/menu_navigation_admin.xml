@@ -16,6 +16,6 @@
 
     <item
         android:id="@+id/navReportesEstafisticas"
-        android:icon="@drawable/ic_reporte_estadistica"
+        android:icon="@drawable/ic_reporte_estadisticas"
         android:title="Reportes" />
 </menu>

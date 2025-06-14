@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.EstacionamientosDisponiblesFragment">
+
+
+    <!-- ICONO DE ESTACIONAMIENTO -->
+    <ImageButton
+        android:id="@+id/lblVolver"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/stylo_redondo"
+        android:contentDescription="Volver"
+        android:src="@drawable/ic_flecha_derecha"
+        app:layout_constraintBottom_toBottomOf="@id/lblTituloEstacionamiento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/lblTituloEstacionamiento"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/imgEstacionamiento"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_coche_casita"
+        android:tint="@color/terracota_suave"
+        android:contentDescription="Icono de estacionamiento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- TITULO  -->
+    <TextView
+        android:id="@+id/lblTituloDialogoUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="El estacionamiento Com 1 está disponible para su uso"
+        android:textAlignment="center"
+        android:textColor="@color/rojo_ues"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:lineSpacingExtra="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgEstacionamiento" />
+
+    <!-- LINEA DECORATIVA -->
+    <View
+        android:id="@+id/lineaDivisora"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/rojo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblTituloDialogoUsuario" />
+
+    <!-- INFORMACION -->
+    <TextView
+        android:id="@+id/lblInformacion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="Puedes reservar este espacio o parquearte directamente. ¿Qué deseas hacer?"
+        android:textAlignment="center"
+        android:textColor="@color/rojo_terroso"
+        android:textSize="14sp"
+        android:lineSpacingExtra="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineaDivisora" />
+
+    <!-- CONTENEDOR DE BTNS -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardBotones"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/blanco"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblInformacion">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <!-- BTN RESERVAR AHORA -->
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/btnReservarEstacionamineto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/rojo_brillante"
+                android:text="Reservar Estacionamineto"
+                android:textColor="@color/white"
+                app:icon="@drawable/ic_reserva"
+                app:iconTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- BTN PARKEARME AHORA -->
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/btnParquearme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/rojo_brillante"
+                android:text="Parquearme"
+                android:textColor="@color/white"
+                app:icon="@drawable/ic_carro"
+                app:iconTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

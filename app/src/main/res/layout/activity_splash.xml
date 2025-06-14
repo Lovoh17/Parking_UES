@@ -95,7 +95,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- LÍNEAS DE CARRETERA ANIMADAS -->
+        <!-- LINEAS DE CARRETERA ANIMADAS -->
         <View
             android:id="@+id/linea_carretera_1"
             android:layout_width="60dp"
@@ -136,11 +136,8 @@
             app:layout_constraintStart_toStartOf="@+id/fondo_carretera"
             app:layout_constraintTop_toTopOf="@+id/fondo_carretera" />
 
-        <!-- CARRITO CORRIENDO - ESTE ES EL PROTAGONISTA -->
 
         <!-- SOMBRA DEL CARRITO -->
-
-        <!-- HUMO/ESCAPE DEL CARRITO -->
         <ImageView
             android:id="@+id/img_carrito_corriendo"
             android:layout_width="36dp"
@@ -191,7 +188,7 @@
 
     </androidx.cardview.widget.CardView>
 
-    <!-- TEXTO DE CARGA DINÁMICO -->
+    <!-- TEXTO DE CARGA DINAMICO -->
     <TextView
         android:id="@+id/lbl_texto_carga"
         android:layout_width="wrap_content"

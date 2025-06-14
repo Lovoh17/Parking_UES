@@ -16,7 +16,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.parking_ues.EditarContraseniaActivity;
 import com.example.parking_ues.R;
+import com.example.parking_ues.RegisterActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -80,6 +82,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ResgisterUsers.setOnClickListener(v -> registrarUsuario());
+
+        //EVENTO PARA IR A CREAR CUENTA
+        lblRgisterUsers.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+            startActivity(intent);
+            finish();
+        });
 
         Button btnLogin = findViewById(R.id.btnIniciarSesion);
         btnLogin.setOnClickListener(v -> {

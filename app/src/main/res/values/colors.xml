@@ -21,6 +21,7 @@
 
     <color name="celeste_muy_claro">#6FE6FC</color>
     <color name="celeste_claro">#4ED7F1</color>
+    <color name="ceslete_clarito">#C7D9DD</color>
 
 
     <!--colores para estado -->
@@ -52,4 +53,9 @@
     <color name="blanco_50">#80FFFFFF</color>
     <color name="blanco_20">#33FFFFFF</color>
     <color name="blanco_80">#CCFFFFFF</color>
+
+
+    <color name="dorado">#efb810</color>
+    <color name="plateado">#B0B0B0</color>
+
 </resources>

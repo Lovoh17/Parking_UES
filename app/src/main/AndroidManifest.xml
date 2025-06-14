@@ -13,6 +13,17 @@
         android:theme="@style/Theme.Parking_UES"
         tools:targetApi="31">
         <activity
+            android:name=".EditarContraseniaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditarPerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.MenuClienteActivity"
+            android:exported="true"/>
+
+
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
@@ -27,6 +38,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".Activities.SplashActivity"
             android:exported="true" />

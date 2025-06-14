@@ -34,34 +34,100 @@
               android:textStyle="bold" />
      </androidx.cardview.widget.CardView>
 
+     <!-- CAMPO PARA BUSCAR -->
+     <com.google.android.material.card.MaterialCardView
+         android:id="@+id/cardSearch"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_marginHorizontal="16dp"
+         android:layout_marginTop="16dp"
+         app:cardCornerRadius="25dp"
+         app:cardElevation="4dp"
+         app:layout_constraintTop_toBottomOf="@+id/cardTitulo"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:strokeWidth="0dp">
+
+          <!-- LinearLayout PARA LA BUSQUEDA -->
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/crema_claro"
+              android:gravity="center_vertical"
+              android:orientation="horizontal"
+              android:padding="4dp">
+
+               <ImageView
+                   android:id="@+id/iconSearch"
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:layout_marginStart="16dp"
+                   android:contentDescription="Buscar"
+                   android:src="@drawable/ic_buscar"
+                   app:tint="@color/rojo_ues" />
+
+               <EditText
+                   android:id="@+id/txtBuscarUsuarios"
+                   android:layout_width="0dp"
+                   android:layout_height="48dp"
+                   android:layout_marginHorizontal="12dp"
+                   android:layout_weight="1"
+                   android:hint="Buscar Usuarios..."
+                   android:imeOptions="actionSearch"
+                   android:inputType="text"
+                   android:maxLines="1"
+                   android:textColor="@color/rojo_ues"
+                   android:textColorHint="#80000000"
+                   android:textSize="16sp"
+                   app:strokeColor="@color/rojo_ues" />
+
+               <ImageView
+                   android:id="@+id/iconClear"
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:layout_marginEnd="16dp"
+                   android:background="?attr/selectableItemBackgroundBorderless"
+                   android:clickable="true"
+                   android:contentDescription="Limpiar busqueda"
+                   android:focusable="true"
+                   android:src="@drawable/ic_limpiar"
+                   android:visibility="gone"
+                   app:tint="@color/rojo_ues" />
+          </LinearLayout>
+     </com.google.android.material.card.MaterialCardView>
+
      <!-- CONTADOR DE USUARIOS -->
      <TextView
          android:id="@+id/lblContadorUsuarios"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:layout_marginTop="8dp"
          android:layout_marginStart="16dp"
+         android:layout_marginTop="16dp"
          android:text="Total de usuarios: 0"
+         android:textColor="@color/rojo_granate"
          android:textSize="16sp"
          android:textStyle="bold"
-         android:textColor="@color/rojo_granate"
-         app:layout_constraintTop_toBottomOf="@id/cardTitulo"
+         app:layout_constraintTop_toBottomOf="@+id/cardSearch"
          app:layout_constraintStart_toStartOf="parent" />
 
-     <!-- RECYCLERVIEW -->
+     <!-- RVC USUARIOS -->
      <androidx.recyclerview.widget.RecyclerView
          android:id="@+id/rvcUsuarios"
          android:layout_width="0dp"
          android:layout_height="0dp"
+         android:layout_marginTop="16dp"
+         android:layout_marginStart="8dp"
+         android:layout_marginEnd="8dp"
+         android:layout_marginBottom="16dp"
          android:clipToPadding="false"
          android:paddingStart="8dp"
          android:paddingEnd="8dp"
-         app:layout_constraintTop_toBottomOf="@id/lblContadorUsuarios"
-         app:layout_constraintBottom_toTopOf="@id/btnAbrirDialogoUsuarios"
+         app:layout_constraintTop_toBottomOf="@+id/lblContadorUsuarios"
+         app:layout_constraintBottom_toTopOf="@+id/btnAbrirDialogoUsuarios"
          app:layout_constraintStart_toStartOf="parent"
          app:layout_constraintEnd_toEndOf="parent" />
 
-     <!-- BOT0N ABRIR DIALOGO PARA INSERTAR USUARIOS -->
+     <!-- BOTON ABRIR DIALOGO PARA INSERTAR USUARIOS -->
      <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
          android:id="@+id/btnAbrirDialogoUsuarios"
          android:layout_width="wrap_content"
@@ -75,4 +141,5 @@
          app:layout_constraintBottom_toBottomOf="parent"
          app:layout_constraintEnd_toEndOf="parent"
          app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
