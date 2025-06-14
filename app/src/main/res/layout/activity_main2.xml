@@ -8,13 +8,13 @@
     android:background="@color/light_gray"
     android:padding="16dp"
     android:id="@+id/MainActivity2"
-    tools:context=".MainActivity2">
+    tools:context=".Activities.MainActivity2">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/primary_color"
+        android:background="@color/azul_cielo"
         app:titleTextColor="@color/white"
         app:title="Bienvenido, Usuario" />
 
@@ -38,7 +38,7 @@
                 android:text="Escanear Código QR"
                 android:drawableStart="@drawable/ic_qr"
                 android:drawablePadding="8dp"
-                android:backgroundTint="@color/primary_color"
+                android:backgroundTint="@color/azul"
                 android:textColor="@color/white"
                 android:layout_marginBottom="16dp"/>
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Estilo para el texto del titulo -->
+    <style name="ToolbarTitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <!-- Estilo para el munu desplegable -->
+    <style name="toolbarDesplegable1" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">@color/rojo_suave</item>
+        <item name="android:textColorPrimary">@color/rojo_suave</item>
+        <item name="colorControlNormal">@color/rojo_suave</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextoBontones">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

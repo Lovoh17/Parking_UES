@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navDashboardAdministrativo"
+        android:icon="@drawable/ic_panel_admin"
+        android:title="Deshaboard" />
+    <item
+        android:id="@+id/navGestionEstaconamiento"
+        android:icon="@drawable/ic_carro"
+        android:title="Estacionamiento" />
+    <item
+
+        android:id="@+id/navGestionarUsuarios"
+        android:icon="@drawable/ic_usuario"
+        android:title="Usuarios " />
+
+    <item
+        android:id="@+id/navReportesEstafisticas"
+        android:icon="@drawable/ic_reporte_estadisticas"
+        android:title="Reportes" />
+</menu>

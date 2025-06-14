@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/style_redondeado_blanco"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@color/blanco"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- TITULO  -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"
+                    android:text="Información de pago"
+                    android:textColor="@color/rojo_brillante"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- CAMPO NOMBRE -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:boxStrokeColor="#7D0A0A"
+                    app:hintTextColor="#6D2323">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtNombreCliente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nombre"
+                        android:textColor="#2B2A4C"
+                        android:textColorHint="#6D2323" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- CAMPO NUMERO DE TARJETA -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:boxStrokeColor="#7D0A0A"
+                    app:hintTextColor="#6D2323">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtNumeroTarjeta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Número de tarjeta"
+                        android:inputType="number"
+                        android:maxLength="16"
+                        android:textColor="#2B2A4C"
+                        android:textColorHint="#6D2323" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- CAMPOS FECHA Y CODIG -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        app:boxStrokeColor="#7D0A0A"
+                        app:hintTextColor="#6D2323">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/txtFechaVencimiento"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="MM/AA"
+                            android:inputType="number"
+                            android:maxLength="5"
+                            android:textColor="#2B2A4C"
+                            android:textColorHint="#6D2323" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        app:boxStrokeColor="#7D0A0A"
+                        app:endIconMode="password_toggle"
+                        app:endIconTint="#7D0A0A"
+                        app:hintTextColor="#6D2323">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/txtCVV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="CVV"
+                            android:inputType="numberPassword"
+                            android:maxLength="4"
+                            android:textColor="#2B2A4C"
+                            android:textColorHint="#6D2323" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <!-- CAMPO MONTO -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:boxStrokeColor="#7D0A0A"
+                    app:hintTextColor="#6D2323">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtMonto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="true"
+                        android:hint="Monto"
+                        android:textColor="#7D0A0A"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- IMAGENES DE TARJETAS -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="32dp"
+                        android:layout_marginHorizontal="8dp"
+                        android:contentDescription="Visa"
+                        android:src="@drawable/img_visa" />
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="32dp"
+                        android:layout_marginHorizontal="8dp"
+                        android:contentDescription="American Express"
+                        android:src="@drawable/img_american_expressss" />
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="32dp"
+                        android:layout_marginHorizontal="8dp"
+                        android:contentDescription="MasterCard"
+                        android:src="@drawable/img_mastercard" />
+
+                </LinearLayout>
+
+                <!-- BOTOES CANCELAR Y PAGAR -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCancelar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="Cancelar"
+                        android:textColor="@color/verde"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="@android:color/transparent"
+                        app:cornerRadius="12dp"
+                        app:icon="@drawable/ic_x"
+                        app:iconGravity="textStart"
+                        app:iconTint="@color/verde"
+                        app:strokeColor="@color/verde"
+                        app:strokeWidth="2dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnConfirmarPagoMenbresia"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:text="Confirmar pago"
+                        android:textColor="#EEEEEE"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/verde"
+                        app:cornerRadius="10dp"
+                        app:icon="@drawable/ic_check"
+                        app:iconGravity="textStart"
+                        app:iconTint="@color/blanco" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
