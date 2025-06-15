@@ -2,8 +2,60 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary_color">#6200EE</color>
     <color name="gray">#9E9E9E</color>
     <color name="secondary_color">#03DAC6</color>
     <color name="light_gray">#F5F5F5</color>
+
+
+    <!-- Paleta de Colores -->
+    <color name="azul">#6200EE</color>
+    <color name="azul_cyan">#0288D1</color>
+    <color name="azul_cielo">#B3E5FC</color>
+    <color name="azul_turquesa">#03A9F4</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="azul_electrico">#448AFF</color>
+    <color name="gris_oscuro">#212121</color>
+    <color name="gris_plomo">#757575</color>
+    <color name="gris_plata">#BDBDBD</color>
+    <color name="morado_violeta">#6200EE</color>
+
+    <color name="celeste_muy_claro">#6FE6FC</color>
+    <color name="celeste_claro">#4ED7F1</color>
+    <color name="ceslete_clarito">#C7D9DD</color>
+
+
+    <!--colores para estado -->
+    <color name="rojo">#D32F2F</color>
+    <color name="amarillo">#FFC107</color>
+    <color name="verde">#388E3C</color>
+
+    <!--colores rojo ues -->
+    <color name="rojo_oscuro">#7D0A0A</color>
+    <color name="rojo_brillante">#BF3131</color>
+    <color name="beige_dorado">#EAD196</color>
+    <color name="gris_claro">#EEEEEE</color>
+    <color name="azul_noche">#2B2A4C</color>
+    <color name="rojo_fuerte">#B31312</color>
+    <color name="durazno_claro">#EA906C</color>
+    <color name="rojo_terroso">#6D2323</color>
+    <color name="rojo_sangre">#A31D1D</color>
+    <color name="beige_claro">#E5D0AC</color>
+    <color name="crema_claro">#FEF9E1</color>
+    <color name="rojo_suave">#E55050</color>
+    <color name="rojo_granate">#AF3E3E</color>
+    <color name="rojo_intenso">#CB0404</color>
+    <color name="naranja_durazno">#F3A26D</color>
+    <color name="terracota_suave">#BE5B50</color>
+    <color name="rojo_ues">#800000</color>
+
+
+    <!-- Colores con transparencia -->
+    <color name="blanco_50">#80FFFFFF</color>
+    <color name="blanco_20">#33FFFFFF</color>
+    <color name="blanco_80">#CCFFFFFF</color>
+
+
+    <color name="dorado">#efb810</color>
+    <color name="plateado">#B0B0B0</color>
+
 </resources>

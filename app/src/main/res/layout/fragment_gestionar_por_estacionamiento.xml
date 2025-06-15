@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".Fragments.GestionarPorEstacionamientoFragment">
+
+    <!-- TITULO-->
+    <TextView
+        android:id="@+id/lblTituloEstacionamiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parqueo V1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- btn de volver -->
+    <ImageButton
+        android:id="@+id/lblVolver"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_flecha_derecha"
+        android:contentDescription="Volver"
+        android:background="@drawable/stylo_redondo"
+        app:layout_constraintTop_toTopOf="@id/lblTituloEstacionamiento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/lblTituloEstacionamiento"
+        app:tint="@color/white"/>
+
+    <!-- btn editar estacionamiento -->
+    <ImageButton
+        android:id="@+id/btnEditarEstacionamiento"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="9dp"
+        android:background="@drawable/stylo_redondo"
+        android:contentDescription="Editar estacionamiento"
+        android:src="@drawable/ic_editar"
+        app:layout_constraintTop_toTopOf="@id/lblTituloEstacionamiento"
+        app:layout_constraintBottom_toBottomOf="@id/lblTituloEstacionamiento"
+        app:layout_constraintEnd_toStartOf="@+id/lblVolver"
+        app:tint="@color/white" />
+
+    <!-- Texto indicando filtrar por" -->
+    <TextView
+        android:id="@+id/lblFiltrarPor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Filtrar por:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblTituloEstacionamiento" />
+
+    <!-- Chips para filtrar DIA y MES -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupFiltros"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        app:singleSelection="true"
+        app:layout_constraintStart_toEndOf="@id/lblFiltrarPor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/lblFiltrarPor"
+        app:layout_constraintBottom_toBottomOf="@id/lblFiltrarPor">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipDia"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="DÍA"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/terracota_suave"
+            android:checked="true"
+            android:layout_marginEnd="8dp"
+            app:chipCornerRadius="20dp"
+            app:chipStrokeWidth="0dp"
+            app:checkedIconVisible="false"
+            android:gravity="center"
+            style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMes"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="MES"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/durazno_claro"
+            app:chipCornerRadius="20dp"
+            app:chipStrokeWidth="0dp"
+            app:checkedIconVisible="false"
+            style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <!-- Card principal con info del usuario -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardUsuarioInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chipGroupFiltros"
+        android:backgroundTint="@color/beige_dorado"/>
+
+    <!-- Titulo del historial -->
+    <TextView
+        android:id="@+id/lblTituloHistorial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="HISTORIAL DE PARQUEADOS EN EL ESTACIONAMIENTO"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardUsuarioInfo" />
+
+    <!-- rvc para el historial -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvcHistorialPorEstacionamiento"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblTituloHistorial"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

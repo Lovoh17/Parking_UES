@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navPerfilAdmin"
+        android:icon="@drawable/ic_perfil_blanco"
+        android:title="Perfil"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/navCerrarSesion"
+        android:title="Cerrar Sesión"
+        android:icon="@drawable/ic_serrar_secion"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/navSalir"
+        android:title="Salir de la App"
+        android:icon="@drawable/ic_salir"
+        app:showAsAction="never" />
+</menu>
