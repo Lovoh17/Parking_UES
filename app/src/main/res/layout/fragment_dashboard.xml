@@ -25,7 +25,7 @@
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="52dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -79,17 +79,17 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="@color/beige_dorado"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="12dp"
-                        android:background="@color/beige_dorado">
+                        android:padding="12dp">
 
                         <ImageView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
                             android:contentDescription="Icono usuarios"
                             android:src="@drawable/ic_gestion_usuarios"
-                            android:tint="@color/rojo_terroso" />
+                            app:tint="@color/rojo_terroso" />
 
                         <TextView
                             android:id="@+id/lblContadorUsuarios"
@@ -126,17 +126,17 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="@color/beige_dorado"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="12dp"
-                        android:background="@color/beige_dorado">
+                        android:padding="12dp">
 
                         <ImageView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
                             android:contentDescription="Icono carro"
                             android:src="@drawable/ic_carro"
-                            android:tint="@color/gris_oscuro" />
+                            app:tint="@color/gris_oscuro" />
 
                         <TextView
                             android:id="@+id/lblContadorComerciales"
@@ -174,17 +174,17 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="@color/beige_dorado"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="12dp"
-                        android:background="@color/beige_dorado">
+                        android:padding="12dp">
 
                         <ImageView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
                             android:contentDescription="Icono carro"
                             android:src="@drawable/ic_carro"
-                            android:tint="@color/verde" />
+                            app:tint="@color/verde" />
 
                         <TextView
                             android:id="@+id/lblContadorVIP"
@@ -251,7 +251,7 @@
                             android:layout_height="40dp"
                             android:contentDescription="Icono gestion usuarios"
                             android:src="@drawable/ic_gestion_usuarios"
-                            android:tint="@color/rojo_terroso" />
+                            app:tint="@color/rojo_terroso" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -288,7 +288,7 @@
                             android:layout_height="40dp"
                             android:contentDescription="Icono configuracion"
                             android:src="@drawable/ic_configuraciones"
-                            android:tint="#FF6B35" />
+                            app:tint="#FF6B35" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -342,7 +342,7 @@
                             android:layout_marginEnd="12dp"
                             android:contentDescription="Icono usuario"
                             android:src="@drawable/ic_usuario"
-                            android:tint="@color/rojo_terroso" />
+                            app:tint="@color/rojo_terroso" />
 
                         <TextView
                             android:id="@+id/lblUltimoParqueo"
@@ -365,7 +365,7 @@
                             android:layout_marginEnd="12dp"
                             android:contentDescription="Icono compra"
                             android:src="@drawable/ic_carrito"
-                            android:tint="#FF6B35" />
+                            app:tint="#FF6B35" />
 
                         <TextView
                             android:id="@+id/lblUltimaCompra"
