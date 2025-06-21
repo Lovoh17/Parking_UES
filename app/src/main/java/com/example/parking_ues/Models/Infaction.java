@@ -5,7 +5,6 @@ import java.util.Date;
 public class Infaction {
     private String InfactionId;
     private String userId;
-    private String vehicleId;
     private String sessionId;
     private String InfactionType; // "fuera del rango de horas", "sin pago"
     private String description;
@@ -17,10 +16,9 @@ public class Infaction {
     // Constructor vacío
     public Infaction() {}
 
-    public Infaction(String InfactionId, String userId, String vehicleId, String sessionId, String InfactionType, String description, double fine) {
+    public Infaction(String InfactionId, String userId, String sessionId, String InfactionType, String description, double fine) {
         this.InfactionId = InfactionId;
         this.userId = userId;
-        this.vehicleId = vehicleId;
         this.sessionId = sessionId;
         this.InfactionType = InfactionType;
         this.description = description;
@@ -35,9 +33,6 @@ public class Infaction {
 
     public String getUserId() { return userId; }
     public void setUserId(String userId) { this.userId = userId; }
-
-    public String getVehicleId() { return vehicleId; }
-    public void setVehicleId(String vehicleId) { this.vehicleId = vehicleId; }
 
     public String getSessionId() { return sessionId; }
     public void setSessionId(String sessionId) { this.sessionId = sessionId; }

@@ -12,7 +12,6 @@ public class MonthlyPlan {
     private String allowedEndTime;
     private double monthlyFee;//precio
     private boolean isActive;
-    private int InfractionCount;//conteo de infarcciones
     private Date createdAt;
 
     // Constructor vacío
@@ -26,7 +25,16 @@ public class MonthlyPlan {
         this.allowedEndTime = allowedEndTime;
         this.monthlyFee = monthlyFee;
         this.isActive = true;
-        this.InfractionCount = 0;
+        this.createdAt = new Date();
+    }
+
+    public MonthlyPlan(String userId, String vehicleId, String allowedStartTime, String allowedEndTime, double monthlyFee) {
+        this.userId = userId;
+        this.vehicleId = vehicleId;
+        this.allowedStartTime = allowedStartTime;
+        this.allowedEndTime = allowedEndTime;
+        this.monthlyFee = monthlyFee;
+        this.isActive = true;
         this.createdAt = new Date();
     }
 
@@ -57,9 +65,6 @@ public class MonthlyPlan {
 
     public boolean isActive() { return isActive; }
     public void setActive(boolean active) { isActive = active; }
-
-    public int getInfractionCount() { return InfractionCount; }
-    public void setInfractionCount(int infractionCount) { this.InfractionCount = infractionCount; }
 
     public Date getCreatedAt() { return createdAt; }
     public void setCreatedAt(Date createdAt) { this.createdAt = createdAt; }
