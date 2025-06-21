@@ -15,6 +15,7 @@ import com.example.parking_ues.Fragments.TiempoEstacionadoFragment;
 import com.example.parking_ues.Fragments.VerEstacionamientosFragment;
 import com.example.parking_ues.R;
 import com.example.parking_ues.RegistroCode;
+import com.example.parking_ues.Services.DatabaseSeederService;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MenuClienteActivity extends AppCompatActivity {
@@ -30,6 +31,9 @@ public class MenuClienteActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0);
             return insets;
         });
+        DatabaseSeederService seeder = new DatabaseSeederService();
+        seeder.seedAllData();
+
         //ASOCIARL ELEMENTOS
         bottomNavigationView = findViewById(R.id.bottomnavigation);
         fragmentContainerView = findViewById(R.id.fragmentContainerView);

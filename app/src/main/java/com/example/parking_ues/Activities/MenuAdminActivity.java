@@ -23,6 +23,7 @@ import com.example.parking_ues.Fragments.GestionarEstacionamientoFragment;
 import com.example.parking_ues.Fragments.PerfilAdminFragment;
 import com.example.parking_ues.R;
 import com.example.parking_ues.Fragments.ReportesFragment;
+import com.example.parking_ues.Services.DatabaseSeederService;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MenuAdminActivity extends AppCompatActivity {
@@ -40,6 +41,8 @@ public class MenuAdminActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0);
             return insets;
         });
+        DatabaseSeederService seeder = new DatabaseSeederService();
+
         bottomNavigationView = findViewById(R.id.bottomnavigation);
         fragmentContainerView = findViewById(R.id.fragmentContainerView);
         toolbarAdmin = findViewById(R.id.toolbar);

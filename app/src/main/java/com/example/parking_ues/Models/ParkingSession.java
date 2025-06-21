@@ -4,28 +4,24 @@ import java.util.Date;
 
 public class ParkingSession {
     private String sessionId;
-    private String vehicleId;
     private String userId;
     private String spaceId;
-    private String plateNumber;
     private Date entryTime;
     private Date exitTime;
     private long duration; // en minutos
-    private double totalCost;//contemplar si tiene plan
-    private String status; // "activo", "completo", "infraccion"
-    private String paymentStatus; // "pendiente", "pagado", "deuda"
-    private String planType;
+    private double totalCost;
+    private String status; // "active", "completed", "violation"
+    private String paymentStatus; // "pending", "paid", "debt"
+    private String planType; // "none", "standard", "vip"
     private boolean isWithinAllowedHours;
 
-    // Constructor vacío
+    // Constructor vacío requerido para Firebase
     public ParkingSession() {}
 
-    public ParkingSession(String sessionId, String vehicleId, String userId, String spaceId, String plateNumber, String planType) {
+    public ParkingSession(String sessionId, String userId, String spaceId, String planType) {
         this.sessionId = sessionId;
-        this.vehicleId = vehicleId;
         this.userId = userId;
         this.spaceId = spaceId;
-        this.plateNumber = plateNumber;
         this.planType = planType;
         this.entryTime = new Date();
         this.status = "active";
@@ -39,17 +35,11 @@ public class ParkingSession {
     public String getSessionId() { return sessionId; }
     public void setSessionId(String sessionId) { this.sessionId = sessionId; }
 
-    public String getVehicleId() { return vehicleId; }
-    public void setVehicleId(String vehicleId) { this.vehicleId = vehicleId; }
-
     public String getUserId() { return userId; }
     public void setUserId(String userId) { this.userId = userId; }
 
     public String getSpaceId() { return spaceId; }
     public void setSpaceId(String spaceId) { this.spaceId = spaceId; }
-
-    public String getPlateNumber() { return plateNumber; }
-    public void setPlateNumber(String plateNumber) { this.plateNumber = plateNumber; }
 
     public Date getEntryTime() { return entryTime; }
     public void setEntryTime(Date entryTime) { this.entryTime = entryTime; }
