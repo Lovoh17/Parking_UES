@@ -14,6 +14,7 @@ import com.example.parking_ues.Fragments.PerfilClienteFragment;
 import com.example.parking_ues.Fragments.TiempoEstacionadoFragment;
 import com.example.parking_ues.Fragments.VerEstacionamientosFragment;
 import com.example.parking_ues.R;
+import com.example.parking_ues.RegistroCode;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MenuClienteActivity extends AppCompatActivity {
@@ -52,6 +53,12 @@ public class MenuClienteActivity extends AppCompatActivity {
             else if (id == R.id.navPerfil) {
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainerView, new PerfilClienteFragment())
+                        .commit();
+                return true;
+            }
+            else if (id == R.id.navRegistroCode) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragmentContainerView, new RegistroCode())
                         .commit();
                 return true;
             }
