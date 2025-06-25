@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.parking_ues'
+    namespace 'com.example.ues_parking'
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.example.parking_ues"
+        applicationId "com.example.ues_parking"
         minSdk 21
         targetSdk 35
         versionCode 1

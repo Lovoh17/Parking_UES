@@ -54,7 +54,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
-        android:name="com.example.parking_ues.Fragments.VerEstacionamientosFragment"
+        android:name="com.example.ues_parking.Fragments.VerEstacionamientosFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="0dp"
