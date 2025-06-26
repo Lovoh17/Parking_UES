@@ -31,6 +31,9 @@ public class ParkingSession {
         this.totalCost = 0.0;
     }
 
+    public ParkingSession(String session2, String user002, String vip2, String vehicle002, String vip) {
+    }
+
     // Getters y Setters
     public String getSessionId() { return sessionId; }
     public void setSessionId(String sessionId) { this.sessionId = sessionId; }

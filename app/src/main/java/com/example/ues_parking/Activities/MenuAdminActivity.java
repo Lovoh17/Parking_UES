@@ -41,7 +41,6 @@ public class MenuAdminActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0);
             return insets;
         });
-        DatabaseSeederService seeder = new DatabaseSeederService();
 
         bottomNavigationView = findViewById(R.id.bottomnavigation);
         fragmentContainerView = findViewById(R.id.fragmentContainerView);

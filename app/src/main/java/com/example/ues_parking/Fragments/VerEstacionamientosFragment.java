@@ -1,146 +1,134 @@
 package com.example.ues_parking.Fragments;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.ues_parking.Adapters.ParkingSpaceAdapter;
+import com.example.ues_parking.Models.ParkingSpace;
 import com.example.ues_parking.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
 
-public class VerEstacionamientosFragment extends Fragment implements View.OnClickListener {
-    private CardView cardComercial1, cardComercial2, cardComercial3, cardComercial4, cardComercial5, cardComercial6;
-    private CardView cardVIP1, cardVIP2, cardVIP3, cardVIP4, cardVIP5, cardVIP6;
+public class VerEstacionamientosFragment extends Fragment implements ParkingSpaceAdapter.OnParkingSpaceClickListener {
 
-    public VerEstacionamientosFragment() {
-        // Required empty public constructor
-    }
-
-
-    public static VerEstacionamientosFragment newInstance(String param1, String param2) {
-        VerEstacionamientosFragment fragment = new VerEstacionamientosFragment();
-        Bundle args = new Bundle();
-
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
+    private RecyclerView rvComercial, rvVIP;
+    private ParkingSpaceAdapter comercialAdapter, vipAdapter;
+    private List<ParkingSpace> espaciosNormales = new ArrayList<>();
+    private List<ParkingSpace> espaciosVIP = new ArrayList<>();
+    private DatabaseReference parkingRef;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_ver_estacionamientos, container, false);
-        AsociarELementosXML(view);
+
+        // Inicializar Firebase
+        parkingRef = FirebaseDatabase.getInstance().getReference("parking_spaces");
+
+        // Configurar vistas
+        rvComercial = view.findViewById(R.id.rvComercial);
+        rvVIP = view.findViewById(R.id.rvVIP);
+
+        // Configurar adaptadores
+        comercialAdapter = new ParkingSpaceAdapter(requireContext(), espaciosNormales, this);
+        vipAdapter = new ParkingSpaceAdapter(requireContext(), espaciosVIP, this);
+
+        rvComercial.setLayoutManager(new LinearLayoutManager(getContext()));
+        rvVIP.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        rvComercial.setAdapter(comercialAdapter);
+        rvVIP.setAdapter(vipAdapter);
+
+        // Cargar datos
+        loadParkingSpaces();
+
         return view;
     }
-    public void AsociarELementosXML(View view){
-        // Asociar estacionamientos comerciales
-        cardComercial1 = view.findViewById(R.id.cardComercial1);
-        cardComercial1.setOnClickListener(this);
 
-        cardComercial2 = view.findViewById(R.id.cardComercial2);
-        cardComercial2.setOnClickListener(this);
+    private void loadParkingSpaces() {
+        parkingRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                espaciosNormales.clear();
+                espaciosVIP.clear();
 
-        cardComercial3 = view.findViewById(R.id.cardComercial3);
-        cardComercial3.setOnClickListener(this);
+                for (DataSnapshot spaceSnapshot : snapshot.getChildren()) {
+                    ParkingSpace space = spaceSnapshot.getValue(ParkingSpace.class);
+                    if (space != null) {
+                        if ("vip".equalsIgnoreCase(space.getSection())) {
+                            espaciosVIP.add(space);
+                        } else {
+                            espaciosNormales.add(space);
+                        }
+                    }
+                }
 
-        cardComercial4 = view.findViewById(R.id.cardComercial4);
-        cardComercial4.setOnClickListener(this);
+                comercialAdapter.updateData(espaciosNormales);
+                vipAdapter.updateData(espaciosVIP);
+            }
 
-        cardComercial5 = view.findViewById(R.id.cardComercial5);
-        cardComercial5.setOnClickListener(this);
-
-        cardComercial6 = view.findViewById(R.id.cardComercial6);
-        cardComercial6.setOnClickListener(this);
-
-        // Asociar estacionamientos VIP
-        cardVIP1 = view.findViewById(R.id.cardVIP1);
-        cardVIP1.setOnClickListener(this);
-
-        cardVIP2 = view.findViewById(R.id.cardVIP2);
-        cardVIP2.setOnClickListener(this);
-
-        cardVIP3 = view.findViewById(R.id.cardVIP3);
-        cardVIP3.setOnClickListener(this);
-
-        cardVIP4 = view.findViewById(R.id.cardVIP4);
-        cardVIP4.setOnClickListener(this);
-
-        cardVIP5 = view.findViewById(R.id.cardVIP5);
-        cardVIP5.setOnClickListener(this);
-
-        cardVIP6 = view.findViewById(R.id.cardVIP6);
-        cardVIP6.setOnClickListener(this);
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getContext(), "Error al cargar espacios: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
-    //EVENTOS DE LAS CARD DE LOS ESTACIOMANIETOS
+
     @Override
-    public void onClick(View view) {
-        String nombreTitulo = "";
-
-        switch (view.getId()) {
-            case R.id.cardComercial1:
-                nombreTitulo = "Estacionamineto COM-1";
-                break;
-            case R.id.cardComercial2:
-                nombreTitulo = "Estacionamineto COM-2";
-                break;
-            case R.id.cardComercial3:
-                nombreTitulo = "Estacionamineto COM-3";
-                break;
-            case R.id.cardComercial4:
-                nombreTitulo = "Estacionamineto COM-4";
-                break;
-            case R.id.cardComercial5:
-                nombreTitulo = "Estacionamineto COM-5";
-                break;
-            case R.id.cardComercial6:
-                nombreTitulo = "Estacionamineto Com-6";
-                break;
-            case R.id.cardVIP1:
-                nombreTitulo = "Estacionamineto VIP-1";
-                break;
-            case R.id.cardVIP2:
-                nombreTitulo = "Estacionamineto VIP-2";
-                break;
-            case R.id.cardVIP3:
-                nombreTitulo = "Estacionamineto  VIP-3";
-                break;
-            case R.id.cardVIP4:
-                nombreTitulo = "Estacionamineto  VIP-4";
-                break;
-            case R.id.cardVIP5:
-                nombreTitulo = "Estacionamineto VIP-5";
-                break;
-            case R.id.cardVIP6:
-                nombreTitulo = "Estacionamineto  VIP-6";
-
-                break;
+    public void onParkingSpaceClick(ParkingSpace parkingSpace) {
+        if (parkingSpace.isOccupied()) {
+            showSpaceDialog(parkingSpace, "OCUPADO", "Este espacio está actualmente en uso.");
+        } else if (parkingSpace.isReserved()) {
+            showSpaceDialog(parkingSpace, "RESERVADO", "Este espacio VIP ha sido reservado.");
+        } else {
+            showReservationOptions(parkingSpace);
         }
-        abrirFragmentoDestino(nombreTitulo);
     }
 
-    //CONFIGURAR EL DESTINO
-    private void abrirFragmentoDestino(String nombreEspacio) {
-        Fragment fragment = new EstacionamientosDisponiblesFragment();
+    private void showSpaceDialog(ParkingSpace space, String status, String message) {
+        new AlertDialog.Builder(requireContext())
+                .setTitle("Espacio " + space.getSpaceNumber() + " - " + status)
+                .setMessage(message)
+                .setPositiveButton("Aceptar", null)
+                .show();
+    }
 
-        Bundle bundle = new Bundle();
-        bundle.putString("nombreEspacio", nombreEspacio);
-        fragment.setArguments(bundle);
+    private void showReservationOptions(ParkingSpace parkingSpace) {
+        new AlertDialog.Builder(requireContext())
+                .setTitle("Espacio " + parkingSpace.getSpaceNumber())
+                .setMessage("¿Desea reservar este espacio?")
+                .setPositiveButton("Reservar", (dialog, which) -> updateSpaceStatus(parkingSpace, true))
+                .setNegativeButton("Ocupar", (dialog, which) -> updateSpaceStatus(parkingSpace, false))
+                .setNeutralButton("Cancelar", null)
+                .show();
+    }
 
-        requireActivity().getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragmentContainerView, fragment) // tu contenedor de fragmentos
-                .addToBackStack(null)
-                .commit();
+    private void updateSpaceStatus(ParkingSpace parkingSpace, boolean isReservation) {
+        DatabaseReference spaceRef = parkingRef.child(parkingSpace.getSpaceId());
+
+        if (isReservation && "vip".equals(parkingSpace.getSection())) {
+            spaceRef.child("reserved").setValue(true);
+        } else {
+            spaceRef.child("occupied").setValue(true);
+        }
+
+        spaceRef.child("lastUpdated").setValue(System.currentTimeMillis());
     }
 }

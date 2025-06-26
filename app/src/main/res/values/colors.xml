@@ -58,5 +58,6 @@
     <!--Colores para Menbresiass-->
     <color name="dorado">#efb810</color>
     <color name="plateado">#B0B0B0</color>
+    <color name="fondo_gris_claro">#F5F5F5</color>
 
 </resources>

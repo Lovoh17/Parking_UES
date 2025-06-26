@@ -393,7 +393,7 @@
                         app:tint="#E53E3E" />
 
                     <TextView
-                        android:id="@+id/lblCerrarSecionAdmin"
+                        android:id="@+id/lblCerrarSecionCliente"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

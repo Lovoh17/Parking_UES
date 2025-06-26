@@ -2,7 +2,7 @@ package com.example.ues_parking.Models;
 
 import java.util.Date;
 
-public class Infaction {
+public class Infraction {
     private String InfactionId;
     private String userId;
     private String sessionId;
@@ -14,9 +14,9 @@ public class Infaction {
     private Date resolvedAt;
 
     // Constructor vacío
-    public Infaction() {}
+    public Infraction() {}
 
-    public Infaction(String InfactionId, String userId, String sessionId, String InfactionType, String description, double fine) {
+    public Infraction(String InfactionId, String userId, String sessionId, String InfactionType, String description, double fine) {
         this.InfactionId = InfactionId;
         this.userId = userId;
         this.sessionId = sessionId;

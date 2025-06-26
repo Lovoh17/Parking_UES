@@ -36,6 +36,7 @@ dependencies {
     implementation libs.activity
     implementation libs.constraintlayout
     implementation libs.firebase.common
+    implementation libs.firebase.firestore
 
     // Testing
     testImplementation libs.junit

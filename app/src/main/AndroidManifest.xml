@@ -20,15 +20,7 @@
             android:exported="false" />
         <activity
             android:name=".Activities.MenuClienteActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-
+            android:exported="false"/>
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
@@ -38,11 +30,15 @@
         <activity
             android:name=".Activities.MenuAdminActivity"
             android:exported="true"/>
-
-
         <activity
             android:name=".Activities.SplashActivity"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Activities.MainActivity2"
             android:exported="false" />
