@@ -20,6 +20,7 @@ import com.example.ues_parking.Models.User;
 import com.example.ues_parking.RegisterActivity;
 import com.example.ues_parking.R;
 import com.example.ues_parking.Services.DatabaseSeederService;
+import com.example.ues_parking.Services.MembershipSeederService;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
+
         // Inicializar vistas
         initViews();
 
@@ -97,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Warning: Database initialization may have issues", Toast.LENGTH_SHORT).show();
         }
     }*/
+
+
 
     private void initViews() {
         etEmail = findViewById(R.id.txtCorreo);

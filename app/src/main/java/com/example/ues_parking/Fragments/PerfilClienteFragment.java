@@ -103,7 +103,7 @@ public class PerfilClienteFragment extends Fragment {
 
     private void configurarEventos() {
         // EVENTO PARA IR A MEMBRESÍAS
-        lblMenbresias.setOnClickListener(v -> navegarAFragment(new MenbresiasFragment()));
+        lblMenbresias.setOnClickListener(v -> navegarAFragment(new MembresiasFragment()));
 
         // EVENTO PARA IR A HISTORIAL
         lblHistorialCliente.setOnClickListener(v -> navegarAFragment(new HistorialClienteFragment()));

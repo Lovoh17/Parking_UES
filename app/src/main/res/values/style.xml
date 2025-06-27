@@ -20,4 +20,11 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/rojo_ues</item>
+        <item name="colorAccent">@color/rojo_ues</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+    </style>
+
 </resources>

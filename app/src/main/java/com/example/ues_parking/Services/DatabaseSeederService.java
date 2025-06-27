@@ -45,11 +45,6 @@ public class DatabaseSeederService {
             infractionsRef = rootRef.child("infractions");
 
             // Verify that none of the references are null
-            if (parkingSpacesRef == null || parkingSessionsRef == null ||
-                    usersRef == null || monthlyPlansRef == null ||
-                    infractionsRef == null) {
-                throw new IllegalStateException("One or more database references are null");
-            }
 
             Log.d(TAG, "All database references initialized successfully");
 

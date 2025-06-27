@@ -12,57 +12,63 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ues_parking.R;
 
-public class HistorialClienteAdapter extends RecyclerView.Adapter<HistorialClienteAdapter.ViewHolderHistorialClienteAdapter> {
+import java.util.ArrayList;
+import java.util.List;
+
+public class HistorialClienteAdapter extends RecyclerView.Adapter<HistorialClienteAdapter.ViewHolder> {
+
     private Context context;
     private FragmentManager fragmentManager;
+    private List<String> codigos = new ArrayList<>();
+    private List<String> estados = new ArrayList<>();
+    private List<String> fechas = new ArrayList<>();
 
     public HistorialClienteAdapter(Context context, FragmentManager fragmentManager) {
         this.context = context;
         this.fragmentManager = fragmentManager;
     }
 
+    public void limpiarDatos() {
+        codigos.clear();
+        estados.clear();
+        fechas.clear();
+        notifyDataSetChanged();
+    }
+
+    public void agregarCodigoAccess(String codigo, String estado, String fecha) {
+        codigos.add(codigo);
+        estados.add(estado);
+        fechas.add(fecha);
+        notifyItemInserted(codigos.size() - 1);
+    }
+
     @NonNull
     @Override
-    public HistorialClienteAdapter.ViewHolderHistorialClienteAdapter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_hostorial_cliente, parent, false);
-        return new ViewHolderHistorialClienteAdapter(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HistorialClienteAdapter.ViewHolderHistorialClienteAdapter holder, int position) {
-        // Datos de prueba
-        holder.lblPlacaVehiculo.setText("Placa: ABC-123");
-        holder.lblEstacionaminetoHistorial.setText("Estacionamiento: VIP-1");
-        holder.lblFechaEntradaHistorial.setText("Fecha Entrada: 08/06/2025");
-        holder.lblHoraEntradaHistorial.setText("Hora Entrada: 08:30 AM");
-        holder.lblFechaSalidaHistorial.setText("Fecha Salida: 08/06/2025");
-        holder.lblHoraSalidaHistorial.setText("Hora Salida: 12:30 PM");
-        holder.lblDuracion.setText("Duración: 4h");
-        holder.lblMontoPagado.setText("$5.00");
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.tvCodigo.setText("Código: " + codigos.get(position));
+        holder.tvEstado.setText("Estado: " + estados.get(position));
+        holder.tvFecha.setText("Fecha: " + fechas.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 1;
+        return codigos.size();
     }
 
-    public class ViewHolderHistorialClienteAdapter extends RecyclerView.ViewHolder {
-        private TextView lblPlacaVehiculo, lblEstacionaminetoHistorial, lblFechaEntradaHistorial,
-                lblHoraEntradaHistorial, lblFechaSalidaHistorial, lblHoraSalidaHistorial, lblDuracion, lblMontoPagado;
-        public ViewHolderHistorialClienteAdapter(@NonNull View itemView) {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView tvCodigo, tvEstado, tvFecha;
+
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            AociarElemnetosXML();
-        }
-        public void AociarElemnetosXML(){
-            lblPlacaVehiculo = itemView.findViewById(R.id.lblPlacaVehiculo);
-            lblEstacionaminetoHistorial = itemView.findViewById(R.id.lblEstacionaminetoHistorial);
-            lblFechaEntradaHistorial = itemView.findViewById(R.id.lblFechaEntradaHistorial);
-            lblHoraEntradaHistorial = itemView.findViewById(R.id.lblHoraEntradaHistorial);
-            lblFechaSalidaHistorial = itemView.findViewById(R.id.lblFechaSalidaHistorial);
-            lblHoraSalidaHistorial = itemView.findViewById(R.id.lblHoraSalidaHistorial);
-            lblHoraSalidaHistorial = itemView.findViewById(R.id.lblHoraSalidaHistorial);
-            lblDuracion = itemView.findViewById(R.id.lblDuracion);
-            lblMontoPagado = itemView.findViewById(R.id.lblMontoPagado);
+            tvCodigo = itemView.findViewById(R.id.tvCodigo);
+            tvEstado = itemView.findViewById(R.id.tvEstado);
+            tvFecha = itemView.findViewById(R.id.tvFecha);
         }
     }
 }
