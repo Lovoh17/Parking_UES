@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.parking_ues.Dialogs.NombreDialogo;
+import com.example.parking_ues.Dialogs.ReportarPerfilDialog;
 import com.example.parking_ues.EditarContraseniaActivity;
 import com.example.parking_ues.EditarPerfilActivity;
 import com.example.parking_ues.R;
@@ -86,6 +88,12 @@ public class PerfilClienteFragment extends Fragment {
         //EVENTO DEL BOTON CERRA SECION
         lblCerrarSecion.setOnClickListener(v ->{
             mostrarDialogoCerrarSesion();
+        });
+
+        //EVENTO PARA EL BOTON REPORTAR PERFIL
+        lblReportarPerfil.setOnClickListener(v ->{
+            ReportarPerfilDialog dialogo = new ReportarPerfilDialog();
+            dialogo.show(getParentFragmentManager(), "ReportarPerfil");
         });
 
 

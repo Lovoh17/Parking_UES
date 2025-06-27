@@ -351,7 +351,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Reportar de mi perfil"
+                        android:text="Eliminar cuenta"
                         android:textColor="#2C2C2C"
                         android:textSize="16sp"
                         android:textStyle="bold" />
