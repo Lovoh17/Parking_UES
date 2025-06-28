@@ -4,7 +4,7 @@ from time import sleep
 
 class ArduinoConnector:
     """
-    Clase mejorada para manejar la conexión con Arduino (compatible con Linux/Windows/macOS).
+    Clase para manejar la conexión con Arduino (compatible con Linux/Windows/macOS).
     
     Args:
         baudrate (int): Velocidad en baudios (por defecto 9600)
@@ -146,59 +146,6 @@ class ArduinoConnector:
             print(f"Error al leer datos: {str(e)}")
             return None
     
-    def monitor_door_status(self):
-        """
-        Monitorea constantemente el estado de la puerta desde el Arduino.
-        
-        Returns:
-            str or None: Mensaje de estado de la puerta o None si hay error
-        """
-        if not self.connected:
-            print("Error: No hay conexión con el Arduino")
-            return None
-            
-        try:
-            # Limpiar buffer antes de empezar
-            self.ser.reset_input_buffer()
-            
-            while True:
-                if self.ser.in_waiting > 0:
-                    line = self.ser.readline().decode('utf-8').strip()
-                    if line:
-                        print(f"Estado actual: {line}")
-                        return line
-                sleep(0.1)
-                
-        except Exception as e:
-            print(f"Error en monitoreo: {str(e)}")
-            return None
-    
     def __del__(self):
         """Destructor que cierra la conexión al eliminar el objeto."""
         self.disconnect()
-
-
-# Ejemplo de uso con el sistema ultrasónico
-if __name__ == "__main__":
-    print("=== Sistema de Monitoreo de Puerta Automática ===")
-    
-    arduino = ArduinoConnector(baudrate=9600)
-    
-    if arduino.connect():
-        try:
-            print("\nSistema iniciado. Monitoreando estado de la puerta...")
-            print("Presiona Ctrl+C para salir\n")
-            
-            while True:
-                # Monitorear constantemente el estado de la puerta
-                status = arduino.monitor_door_status()
-                if status:
-                    # Aquí puedes agregar lógica adicional basada en el estado
-                    pass
-                
-        except KeyboardInterrupt:
-            print("\nPrograma terminado por el usuario")
-        finally:
-            arduino.disconnect()
-    else:
-        print("No se pudo establecer conexión con el Arduino")
